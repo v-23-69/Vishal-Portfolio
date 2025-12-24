@@ -190,9 +190,13 @@ export const portfolioData = {
         "Responsive design for all devices",
         "Admin panel for catalog management"
       ],
-      technologies: ["React", "Node.js", "MongoDB", "Cloudinary", "Email Integration"],
+      technologies: ["React", "Node.js", "Supabase", "PostgreSQL", "Cloudinary", "Email Integration"],
       impact: "Expanded business reach beyond local area. Enabled customers to browse catalog 24/7 and place custom orders online.",
-      image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800"
+      image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800",
+      imageSlots: [
+        { type: "mobile", label: "Mobile UI 1" },
+        { type: "mobile", label: "Mobile UI 2" }
+      ]
     },
     {
       id: 7,
