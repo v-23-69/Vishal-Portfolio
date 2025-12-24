@@ -213,7 +213,7 @@ export const portfolioData = {
         "Responsive mobile-first design",
         "Future-ready architecture for booking system"
       ],
-      technologies: ["React", "Tailwind CSS", "Node.js", "MongoDB", "Email Notifications"],
+      technologies: ["React", "Tailwind CSS", "Node.js", "Supabase", "PostgreSQL"],
       impact: "Created professional online presence for gym. Increased membership inquiries and provided easy access to gym information.",
       image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"
     },
