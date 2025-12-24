@@ -96,9 +96,15 @@ export const portfolioData = {
         "Analytics dashboard with hiring metrics",
         "Interview scheduling and calendar integration"
       ],
-      technologies: ["React", "FastAPI", "PostgreSQL", "Stripe", "Redux", "WebSockets", "Docker"],
+      technologies: ["React", "FastAPI", "Supabase", "PostgreSQL", "Stripe", "Redux", "WebSockets", "Docker"],
       impact: "Complete recruitment ecosystem handling end-to-end hiring process. Reduced recruitment time by 40% with automated workflows and centralized communication.",
-      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800"
+      image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800",
+      imageSlots: [
+        { type: "desktop", label: "Desktop UI 1" },
+        { type: "desktop", label: "Desktop UI 2" },
+        { type: "desktop", label: "Desktop UI 3" },
+        { type: "desktop", label: "Desktop UI 4" }
+      ]
     },
     {
       id: 3,
