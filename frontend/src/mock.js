@@ -234,9 +234,13 @@ export const portfolioData = {
         "Logging and error handling",
         "Scheduled automation with configurable intervals"
       ],
-      technologies: ["Python", "IMAP Protocol", "SQLite/PostgreSQL", "FastAPI", "Regex", "PyInstaller"],
+      technologies: ["Python", "IMAP Protocol", "PostgreSQL", "FastAPI", "Regex", "PyInstaller"],
       impact: "Production-ready system eliminating manual email processing. Saved 15+ hours per week of manual work with 100% accuracy in data extraction.",
-      image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=800"
+      image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=800",
+      imageSlots: [
+        { type: "desktop", label: "Desktop UI 1" },
+        { type: "desktop", label: "Desktop UI 2" }
+      ]
     },
     {
       id: 9,
