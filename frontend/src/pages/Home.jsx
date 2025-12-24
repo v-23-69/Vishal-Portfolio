@@ -40,6 +40,7 @@ const iconMap = {
 const Home = () => {
   const { theme, setTheme } = useTheme();
   const [selectedProject, setSelectedProject] = useState(null);
+  const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState({});
   const [formData, setFormData] = useState({
     name: '',
