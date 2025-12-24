@@ -122,8 +122,8 @@ export const portfolioData = {
         "Export to PDF, DOCX, and plain text formats",
         "Section-wise regeneration and refinement"
       ],
-      technologies: ["Python", "OpenAI API", "React", "FastAPI", "NLP", "PDF Generation", "MongoDB"],
-      impact: "Helped hundreds of candidates create professional, ATS-optimized resumes. Average resume creation time reduced from hours to minutes with higher quality output.",
+      technologies: ["Python", "OpenAI API", "React", "FastAPI", "NLP", "PDF Generation", "PostgreSQL"],
+      impact: "Helped hundreds of candidates create professional, ATS-optimized resumes. Resume creation time reduced from hours to minutes with higher quality output.",
       image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800"
     },
     {
