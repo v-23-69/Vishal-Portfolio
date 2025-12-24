@@ -272,6 +272,36 @@ const Home = () => {
                         <h4 className="text-sm font-semibold mb-2 text-muted-foreground">Impact</h4>
                         <p className="text-sm leading-relaxed">{project.impact}</p>
                       </div>
+                      
+                      {/* UI Screenshots Section */}
+                      {project.imageSlots && project.imageSlots.length > 0 && (
+                        <div>
+                          <h4 className="text-sm font-semibold mb-3 text-muted-foreground">UI Screenshots</h4>
+                          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+                            {project.imageSlots.map((slot, slotIdx) => (
+                              <div 
+                                key={slotIdx} 
+                                className={`relative border-2 border-dashed border-border rounded-lg hover:border-primary/50 transition-colors group cursor-pointer ${
+                                  slot.type === 'mobile' ? 'aspect-[9/16]' : 'aspect-video col-span-2 md:col-span-3'
+                                }`}
+                              >
+                                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-muted-foreground group-hover:text-primary transition-colors">
+                                  {slot.type === 'mobile' ? (
+                                    <Smartphone className="h-8 w-8" />
+                                  ) : (
+                                    <Desktop className="h-8 w-8" />
+                                  )}
+                                  <span className="text-xs font-medium">{slot.label}</span>
+                                  <Upload className="h-4 w-4 opacity-50" />
+                                </div>
+                              </div>
+                            ))}
+                          </div>
+                          <p className="text-xs text-muted-foreground mt-2 italic">
+                            * Image upload slots for actual screenshots
+                          </p>
+                        </div>
+                      )}
                     </div>
                   )}
                   
