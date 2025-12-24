@@ -246,7 +246,7 @@ const Home = () => {
               <Card 
                 key={project.id}
                 className="border-border/50 bg-card/50 backdrop-blur hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 cursor-pointer group overflow-hidden"
-                onClick={() => setSelectedProject(selectedProject === project.id ? null : project.id)}
+                onClick={() => handleProjectClick(project.id)}
               >
                 <div className="aspect-video overflow-hidden">
                   <img 
