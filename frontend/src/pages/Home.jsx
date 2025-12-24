@@ -272,8 +272,18 @@ const Home = () => {
                     <p className="text-sm leading-relaxed">{project.problem}</p>
                   </div>
                   
-                  {selectedProject === project.id && (
-                    <div className="space-y-4 animate-in slide-in-from-top duration-300">
+                  {/* Expandable Content with Smooth Animations */}
+                  <div 
+                    className="overflow-hidden"
+                    style={{
+                      maxHeight: selectedProject === project.id ? '2000px' : '0',
+                      opacity: selectedProject === project.id ? 1 : 0,
+                      transform: selectedProject === project.id ? 'translateY(0)' : 'translateY(-10px)',
+                      transition: 'max-height 0.3s cubic-bezier(0.4, 0.0, 0.2, 1), opacity 0.25s cubic-bezier(0.4, 0.0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0.0, 0.2, 1)',
+                      willChange: selectedProject === project.id ? 'max-height, opacity, transform' : 'auto'
+                    }}
+                  >
+                    <div className="space-y-4 pt-2">
                       <div>
                         <h4 className="text-sm font-semibold mb-2 text-muted-foreground">Key Features</h4>
                         <ul className="space-y-1">
@@ -332,7 +342,7 @@ const Home = () => {
                         </div>
                       )}
                     </div>
-                  )}
+                  </div>
                   
                   <Button 
                     variant="ghost" 
@@ -340,7 +350,7 @@ const Home = () => {
                     className="w-full mt-4"
                   >
                     {selectedProject === project.id ? 'Show Less' : 'Read More'}
-                    <ArrowRight className={`ml-2 h-4 w-4 transition-transform ${selectedProject === project.id ? 'rotate-90' : ''}`} />
+                    <ArrowRight className={`ml-2 h-4 w-4 transition-transform duration-200 ${selectedProject === project.id ? 'rotate-90' : ''}`} />
                   </Button>
                 </CardContent>
               </Card>
