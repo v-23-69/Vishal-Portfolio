@@ -11,28 +11,44 @@ export const portfolioData = {
   skills: {
     categories: [
       {
-        title: "Frontend Development",
-        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Responsive Design", "ShadCN UI", "Modern Frameworks"]
+        title: "Full-Stack Web Development",
+        skills: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Node.js", "Python", "FastAPI", "REST APIs"]
       },
       {
-        title: "Backend Development",
-        skills: ["Node.js", "Python", "FastAPI", "REST APIs", "Authentication", "Database Design", "MongoDB", "PostgreSQL"]
-      },
-      {
-        title: "Mobile Applications",
-        skills: ["React Native", "Cross-platform", "Mobile UI/UX", "App Deployment", "Performance Optimization"]
+        title: "Mobile App Development",
+        skills: ["React Native", "Android & iOS", "Cross-platform", "Mobile UI/UX", "App Deployment", "Push Notifications"]
       },
       {
         title: "AI / LLM / SLM Systems",
-        skills: ["Large Language Models", "Small Language Models", "AI Integration", "Prompt Engineering", "RAG Systems", "Model Training"]
+        skills: ["Large Language Models", "Small Language Models", "AI Integration", "Prompt Engineering", "RAG Systems", "Vector Databases"]
       },
       {
-        title: "Automation & Workflows",
-        skills: ["n8n Workflows", "Email Automation", "Data Processing", "API Integrations", "MCP Systems", "Task Automation"]
+        title: "Automation & Workflow Systems",
+        skills: ["n8n Workflows", "MCP Systems", "Email Automation", "Data Processing", "Task Automation", "PyInstaller"]
       },
       {
-        title: "Deployment & Integration",
-        skills: ["CI/CD", "Docker", "Cloud Services", "API Design", "System Architecture", "Third-party Integrations"]
+        title: "Database Design",
+        skills: ["Supabase", "PostgreSQL", "MongoDB", "Database Architecture", "Query Optimization", "Data Modeling"]
+      },
+      {
+        title: "Cloud Deployment & Architecture",
+        skills: ["AWS", "Docker", "CI/CD", "Scalable Systems", "Auto-scaling", "System Architecture"]
+      },
+      {
+        title: "API Development & Integrations",
+        skills: ["REST APIs", "WebSockets", "Third-party APIs", "Authentication", "JWT", "OAuth"]
+      },
+      {
+        title: "Shopify Development",
+        skills: ["Store Setup", "Theme Customization", "App Integrations", "Liquid Templates", "Shopify APIs", "E-commerce"]
+      },
+      {
+        title: "Payment Gateway Integrations",
+        skills: ["Stripe", "PayPal", "Payment Processing", "Subscription Systems", "Webhook Handling", "PCI Compliance"]
+      },
+      {
+        title: "Enterprise Dashboards & Admin Systems",
+        skills: ["Role-based Access", "Analytics Dashboards", "Data Visualization", "Admin Panels", "Reporting Systems", "Multi-tenant Architecture"]
       }
     ]
   },
