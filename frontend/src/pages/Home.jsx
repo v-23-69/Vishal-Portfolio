@@ -21,7 +21,10 @@ import {
   Linkedin,
   Mail,
   ChevronDown,
-  CheckCircle2
+  CheckCircle2,
+  Upload,
+  Smartphone,
+  Monitor as Desktop
 } from 'lucide-react';
 import { toast } from '../hooks/use-toast';
 
