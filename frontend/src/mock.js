@@ -144,7 +144,13 @@ export const portfolioData = {
       ],
       technologies: ["React", "Next.js", "Tailwind CSS", "SEO Optimization", "Analytics Integration"],
       impact: "Created strong online presence resulting in increased inbound inquiries. Professional design establishing credibility with enterprise clients.",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800"
+      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
+      imageSlots: [
+        { type: "desktop", label: "Desktop UI 1" },
+        { type: "desktop", label: "Desktop UI 2" },
+        { type: "desktop", label: "Desktop UI 3" },
+        { type: "desktop", label: "Desktop UI 4" }
+      ]
     },
     {
       id: 5,
