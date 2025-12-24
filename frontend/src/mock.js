@@ -167,9 +167,13 @@ export const portfolioData = {
         "Payment integration",
         "Push notifications for offers and updates"
       ],
-      technologies: ["React Native", "Firebase", "Node.js", "MongoDB", "Push Notifications"],
+      technologies: ["React Native", "Firebase", "Node.js", "Supabase", "PostgreSQL", "Push Notifications"],
       impact: "Digitized medical store operations improving customer service and operational efficiency. Enabled online ordering and better customer engagement.",
-      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800"
+      image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
+      imageSlots: [
+        { type: "mobile", label: "Mobile UI 1" },
+        { type: "mobile", label: "Mobile UI 2" }
+      ]
     },
     {
       id: 6,
