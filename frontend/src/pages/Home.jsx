@@ -92,6 +92,34 @@ const Home = () => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const handleProjectClick = (projectId) => {
+    // Prevent re-triggering during animation
+    if (isAnimating) return;
+    
+    setIsAnimating(true);
+    
+    // If clicking the same project, close it
+    if (selectedProject === projectId) {
+      setSelectedProject(null);
+    } else {
+      // If another project is open, close it first
+      if (selectedProject !== null) {
+        setSelectedProject(null);
+        // Wait for close animation before opening new one
+        setTimeout(() => {
+          setSelectedProject(projectId);
+        }, 250);
+      } else {
+        setSelectedProject(projectId);
+      }
+    }
+    
+    // Release animation lock after transition completes
+    setTimeout(() => {
+      setIsAnimating(false);
+    }, 300);
+  };
+
   return (
     <div className="min-h-screen bg-background text-foreground">
       {/* Header */}
