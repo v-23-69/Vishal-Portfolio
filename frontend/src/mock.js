@@ -261,9 +261,13 @@ export const portfolioData = {
         "Windows executable for offline deployment",
         "High accuracy with domain-specific knowledge"
       ],
-      technologies: ["Python", "Transformers", "FastAPI", "Vector Database", "React", "WebSocket", "PyInstaller"],
+      technologies: ["Python", "Transformers", "FastAPI", "Vector Database", "React", "WebSocket", "PyInstaller", "PostgreSQL"],
       impact: "Highly accurate chatbot reducing customer support load by 60%. Seamless integration across platforms with consistent knowledge base.",
-      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800"
+      image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800",
+      imageSlots: [
+        { type: "desktop", label: "Desktop UI 1" },
+        { type: "desktop", label: "Desktop UI 2" }
+      ]
     },
     {
       id: 10,
