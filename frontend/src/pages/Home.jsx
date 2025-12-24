@@ -296,9 +296,6 @@ const Home = () => {
                               </div>
                             ))}
                           </div>
-                          <p className="text-xs text-muted-foreground mt-2 italic">
-                            * Click on images to view full size (Coming Soon)
-                          </p>
                         </div>
                       )}
                     </div>

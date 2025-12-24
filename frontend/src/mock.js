@@ -77,16 +77,14 @@ export const portfolioData = {
         { type: "desktop", label: "Candidate Search" },
         { type: "desktop", label: "Folder Management" },
         { type: "desktop", label: "Talent Pool" },
-        { type: "desktop", label: "Candidate Profile" },
-        { type: "desktop", label: "Analytics View (Coming Soon)" }
+        { type: "desktop", label: "Candidate Profile" }
       ],
       images: [
         "/assets/projects/ellure-1.png",
         "/assets/projects/ellure-2.png",
         "/assets/projects/ellure-3.png",
         "/assets/projects/ellure-4.png",
-        "/assets/projects/ellure-5.png",
-        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+        "/assets/projects/ellure-5.png"
       ]
     },
     {
