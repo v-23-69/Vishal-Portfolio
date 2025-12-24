@@ -6,14 +6,14 @@ import { Badge } from '../components/ui/badge';
 import { Input } from '../components/ui/input';
 import { Textarea } from '../components/ui/textarea';
 import { useTheme } from '../context/ThemeProvider';
-import { 
-  Monitor, 
-  Brain, 
-  Workflow, 
-  Rocket, 
-  MessageSquare, 
-  Globe, 
-  Moon, 
+import {
+  Monitor,
+  Brain,
+  Workflow,
+  Rocket,
+  MessageSquare,
+  Globe,
+  Moon,
   Sun,
   ArrowRight,
   ExternalLink,
@@ -24,7 +24,8 @@ import {
   CheckCircle2,
   Upload,
   Smartphone,
-  Monitor as Desktop
+  Monitor as Desktop,
+  MessageCircle
 } from 'lucide-react';
 import { toast } from '../hooks/use-toast';
 
@@ -42,11 +43,6 @@ const Home = () => {
   const [selectedProject, setSelectedProject] = useState(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [isVisible, setIsVisible] = useState({});
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -67,57 +63,12 @@ const Home = () => {
     return () => observer.disconnect();
   }, []);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Mock submission - will be replaced with backend integration
-    const submission = {
-      ...formData,
-      timestamp: new Date().toISOString(),
-      id: Date.now()
-    };
-    
-    // Store in localStorage for now
-    const existing = JSON.parse(localStorage.getItem('contact_submissions') || '[]');
-    localStorage.setItem('contact_submissions', JSON.stringify([...existing, submission]));
-    
-    toast({
-      title: "Message sent successfully!",
-      description: "Thank you for reaching out. I'll get back to you soon.",
-    });
-    
-    setFormData({ name: '', email: '', message: '' });
-  };
-
   const scrollToSection = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
   const handleProjectClick = (projectId) => {
-    // Prevent re-triggering during animation
-    if (isAnimating) return;
-    
-    setIsAnimating(true);
-    
-    // If clicking the same project, close it
-    if (selectedProject === projectId) {
-      setSelectedProject(null);
-    } else {
-      // If another project is open, close it first
-      if (selectedProject !== null) {
-        setSelectedProject(null);
-        // Wait for close animation before opening new one
-        setTimeout(() => {
-          setSelectedProject(projectId);
-        }, 250);
-      } else {
-        setSelectedProject(projectId);
-      }
-    }
-    
-    // Release animation lock after transition completes
-    setTimeout(() => {
-      setIsAnimating(false);
-    }, 300);
+    setSelectedProject(selectedProject === projectId ? null : projectId);
   };
 
   return (
@@ -125,7 +76,9 @@ const Home = () => {
       {/* Header */}
       <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-lg bg-background/80 border-b border-border">
         <nav className="container mx-auto px-6 py-4 flex items-center justify-between max-w-7xl">
-          <div className="font-mono text-xl font-bold text-primary">VW</div>
+          <div className="flex items-center">
+            <img src="/assets/logo.png" alt="Logo" className="h-12 w-12 object-cover rounded-full" />
+          </div>
           <div className="hidden md:flex items-center gap-8">
             <button onClick={() => scrollToSection('about')} className="text-sm hover:text-primary transition-colors">About</button>
             <button onClick={() => scrollToSection('skills')} className="text-sm hover:text-primary transition-colors">Skills</button>
@@ -149,7 +102,7 @@ const Home = () => {
           <div className="absolute top-1/4 -right-48 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" />
           <div className="absolute bottom-1/4 -left-48 w-96 h-96 bg-primary/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
         </div>
-        
+
         <div className="container mx-auto px-6 max-w-7xl relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8">
             <div className="space-y-4">
@@ -160,15 +113,15 @@ const Home = () => {
                 {portfolioData.hero.role}
               </p>
             </div>
-            
+
             <p className="text-2xl md:text-3xl font-light text-foreground/90 leading-relaxed">
               {portfolioData.hero.tagline}
             </p>
-            
+
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
               {portfolioData.hero.description}
             </p>
-            
+
             <div className="flex items-center justify-center gap-4 pt-8">
               <Button size="lg" onClick={() => scrollToSection('projects')} className="group">
                 View Projects
@@ -180,8 +133,8 @@ const Home = () => {
             </div>
           </div>
         </div>
-        
-        <button 
+
+        <button
           onClick={() => scrollToSection('about')}
           className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce"
         >
@@ -211,8 +164,8 @@ const Home = () => {
           <h2 className="text-4xl md:text-5xl font-light mb-16 text-center">Technical Expertise</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {portfolioData.skills.categories.map((category, idx) => (
-              <Card 
-                key={idx} 
+              <Card
+                key={idx}
                 className="border-border/50 bg-card/50 backdrop-blur hover:border-primary/50 transition-all duration-300 hover:shadow-lg hover:shadow-primary/5 hover:-translate-y-1"
               >
                 <CardHeader>
@@ -240,28 +193,28 @@ const Home = () => {
             <h2 className="text-4xl md:text-5xl font-light mb-4">Featured Projects</h2>
             <p className="text-lg text-muted-foreground">Real-world solutions built for production</p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 gap-8">
             {portfolioData.projects.map((project, idx) => (
-              <Card 
+              <Card
                 key={project.id}
                 className="border-border/50 bg-card/50 backdrop-blur hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 cursor-pointer group overflow-hidden"
                 onClick={() => handleProjectClick(project.id)}
               >
-                <div className="aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
+                <div className="aspect-video overflow-hidden bg-muted/10">
+                  <img
+                    src={project.image}
                     alt={project.title}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <CardHeader>
-                  <div className="flex items-start justify-between">
+                  <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <CardTitle className="text-2xl mb-2">{project.title}</CardTitle>
                       <CardDescription className="text-base">{project.subtitle}</CardDescription>
                     </div>
-                    <Badge variant="outline" className="font-mono text-xs">
+                    <Badge variant="outline" className="font-mono text-xs whitespace-nowrap">
                       {project.category}
                     </Badge>
                   </div>
@@ -271,9 +224,9 @@ const Home = () => {
                     <h4 className="text-sm font-semibold mb-2 text-muted-foreground">Problem Statement</h4>
                     <p className="text-sm leading-relaxed">{project.problem}</p>
                   </div>
-                  
+
                   {/* Expandable Content with Smooth Animations */}
-                  <div 
+                  <div
                     className="overflow-hidden"
                     style={{
                       maxHeight: selectedProject === project.id ? '2000px' : '0',
@@ -295,7 +248,7 @@ const Home = () => {
                           ))}
                         </ul>
                       </div>
-                      
+
                       <div>
                         <h4 className="text-sm font-semibold mb-2 text-muted-foreground">Technologies</h4>
                         <div className="flex flex-wrap gap-2">
@@ -306,47 +259,54 @@ const Home = () => {
                           ))}
                         </div>
                       </div>
-                      
+
                       <div>
                         <h4 className="text-sm font-semibold mb-2 text-muted-foreground">Impact</h4>
                         <p className="text-sm leading-relaxed">{project.impact}</p>
                       </div>
-                      
+
                       {/* UI Screenshots Section */}
                       {project.imageSlots && project.imageSlots.length > 0 && (
                         <div>
                           <h4 className="text-sm font-semibold mb-3 text-muted-foreground">UI Screenshots</h4>
                           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
                             {project.imageSlots.map((slot, slotIdx) => (
-                              <div 
-                                key={slotIdx} 
-                                className={`relative border-2 border-dashed border-border rounded-lg hover:border-primary/50 transition-colors group cursor-pointer ${
-                                  slot.type === 'mobile' ? 'aspect-[9/16]' : 'aspect-video col-span-2 md:col-span-3'
-                                }`}
+                              <div
+                                key={slotIdx}
+                                className={`relative border-2 border-dashed border-border rounded-lg bg-muted/10 hover:border-primary/50 transition-colors group cursor-pointer overflow-hidden ${slot.type === 'mobile' ? 'aspect-[9/16]' : 'aspect-video col-span-2 md:col-span-3'
+                                  }`}
                               >
-                                <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-muted-foreground group-hover:text-primary transition-colors">
-                                  {slot.type === 'mobile' ? (
-                                    <Smartphone className="h-8 w-8" />
-                                  ) : (
-                                    <Desktop className="h-8 w-8" />
-                                  )}
-                                  <span className="text-xs font-medium">{slot.label}</span>
-                                  <Upload className="h-4 w-4 opacity-50" />
-                                </div>
+                                {project.images && project.images[slotIdx] ? (
+                                  <img
+                                    src={project.images[slotIdx]}
+                                    alt={slot.label}
+                                    className="w-full h-full object-contain rounded-lg group-hover:scale-105 transition-transform duration-500"
+                                  />
+                                ) : (
+                                  <div className="absolute inset-0 flex flex-col items-center justify-center gap-2 text-muted-foreground group-hover:text-primary transition-colors">
+                                    {slot.type === 'mobile' ? (
+                                      <Smartphone className="h-8 w-8" />
+                                    ) : (
+                                      <Desktop className="h-8 w-8" />
+                                    )}
+                                    <span className="text-xs font-medium">{slot.label}</span>
+                                    <Upload className="h-4 w-4 opacity-50" />
+                                  </div>
+                                )}
                               </div>
                             ))}
                           </div>
                           <p className="text-xs text-muted-foreground mt-2 italic">
-                            * Image upload slots for actual screenshots
+                            * Click on images to view full size (Coming Soon)
                           </p>
                         </div>
                       )}
                     </div>
                   </div>
-                  
-                  <Button 
-                    variant="ghost" 
-                    size="sm" 
+
+                  <Button
+                    variant="ghost"
+                    size="sm"
                     className="w-full mt-4"
                   >
                     {selectedProject === project.id ? 'Show Less' : 'Read More'}
@@ -356,7 +316,7 @@ const Home = () => {
               </Card>
             ))}
           </div>
-          
+
           {/* Additional Capabilities */}
           <div className="mt-16">
             <h3 className="text-2xl font-light mb-6 text-center">Additional Capabilities</h3>
@@ -384,7 +344,7 @@ const Home = () => {
             {portfolioData.services.map((service, idx) => {
               const IconComponent = iconMap[service.icon];
               return (
-                <Card 
+                <Card
                   key={idx}
                   className="border-border/50 bg-card/50 backdrop-blur hover:border-primary/50 transition-all duration-300 hover:shadow-xl hover:shadow-primary/5 hover:-translate-y-1 group"
                 >
@@ -410,65 +370,34 @@ const Home = () => {
           <div className="max-w-2xl mx-auto">
             <div className="text-center mb-12">
               <h2 className="text-4xl md:text-5xl font-light mb-4">Let's Work Together</h2>
-              <p className="text-lg text-muted-foreground">Have a project in mind? Let's discuss how I can help bring your ideas to life.</p>
+              <p className="text-lg text-muted-foreground">Have a project in mind? Click below to reach out directly.</p>
             </div>
-            
+
             <Card className="border-border/50 bg-card/50 backdrop-blur">
-              <CardContent className="pt-8">
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div>
-                    <label htmlFor="name" className="block text-sm font-medium mb-2">Name</label>
-                    <Input
-                      id="name"
-                      value={formData.name}
-                      onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                      placeholder="Your name"
-                      required
-                    />
+              <CardContent className="pt-12 pb-12">
+                <div className="grid gap-6">
+                  <a href="https://mail.google.com/mail/?view=cm&fs=1&to=vishal5952v@gmail.com" target="_blank" rel="noopener noreferrer" className="w-full">
+                    <Button size="lg" className="w-full h-16 text-lg" variant="default">
+                      <Mail className="mr-3 h-6 w-6" />
+                      Send an Email (Gmail)
+                    </Button>
+                  </a>
+
+                  <div className="relative">
+                    <div className="absolute inset-0 flex items-center">
+                      <span className="w-full border-t border-border" />
+                    </div>
+                    <div className="relative flex justify-center text-xs uppercase">
+                      <span className="bg-background px-2 text-muted-foreground">Or</span>
+                    </div>
                   </div>
-                  
-                  <div>
-                    <label htmlFor="email" className="block text-sm font-medium mb-2">Email</label>
-                    <Input
-                      id="email"
-                      type="email"
-                      value={formData.email}
-                      onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
-                  
-                  <div>
-                    <label htmlFor="message" className="block text-sm font-medium mb-2">Message</label>
-                    <Textarea
-                      id="message"
-                      value={formData.message}
-                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                      placeholder="Tell me about your project..."
-                      rows={6}
-                      required
-                    />
-                  </div>
-                  
-                  <Button type="submit" size="lg" className="w-full">
-                    Send Message
-                    <Mail className="ml-2 h-4 w-4" />
-                  </Button>
-                </form>
-                
-                <div className="mt-8 pt-8 border-t border-border">
-                  <div className="flex justify-center gap-6">
-                    <a href={portfolioData.contact.github} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                      <Github className="h-6 w-6" />
-                    </a>
-                    <a href={portfolioData.contact.linkedin} target="_blank" rel="noopener noreferrer" className="text-muted-foreground hover:text-primary transition-colors">
-                      <Linkedin className="h-6 w-6" />
-                    </a>
-                    <a href={`mailto:${portfolioData.contact.email}`} className="text-muted-foreground hover:text-primary transition-colors">
-                      <Mail className="h-6 w-6" />
-                    </a>
-                  </div>
+
+                  <a href="https://wa.me/917387340570" target="_blank" rel="noopener noreferrer" className="w-full">
+                    <Button size="lg" className="w-full h-16 text-lg text-green-600 border-green-600 hover:bg-green-600/10" variant="outline">
+                      <MessageCircle className="mr-3 h-6 w-6" />
+                      Chat on WhatsApp
+                    </Button>
+                  </a>
                 </div>
               </CardContent>
             </Card>

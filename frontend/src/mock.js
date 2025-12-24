@@ -54,33 +54,6 @@ export const portfolioData = {
   },
   projects: [
     {
-      id: 1,
-      title: "NSH Platform",
-      subtitle: "Web + Mobile App",
-      category: "Full-Stack Application",
-      problem: "Need for a comprehensive digital platform accessible across web and mobile devices with real-time data synchronization and scalable architecture for growing user base.",
-      keyFeatures: [
-        "Responsive web interface optimized for all devices",
-        "Native mobile application for iOS and Android",
-        "Real-time data synchronization across platforms",
-        "User authentication and role-based access control",
-        "Scalable backend architecture",
-        "Performance-optimized for high traffic",
-        "Cloud deployment with auto-scaling"
-      ],
-      technologies: ["React", "React Native", "Node.js", "Supabase", "PostgreSQL", "REST API", "JWT Auth", "AWS"],
-      impact: "Successfully deployed to production serving real users with 99.9% uptime. Architecture designed to scale from hundreds to thousands of concurrent users.",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800",
-      imageSlots: [
-        { type: "mobile", label: "Mobile UI 1" },
-        { type: "mobile", label: "Mobile UI 2" },
-        { type: "mobile", label: "Mobile UI 3" },
-        { type: "desktop", label: "Desktop UI 1" },
-        { type: "desktop", label: "Desktop UI 2" },
-        { type: "desktop", label: "Desktop UI 3" }
-      ]
-    },
-    {
       id: 2,
       title: "Ellure NexHire",
       subtitle: "Recruitment Portal",
@@ -100,31 +73,58 @@ export const portfolioData = {
       impact: "Complete recruitment ecosystem handling end-to-end hiring process. Reduced recruitment time by 40% with automated workflows and centralized communication.",
       image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800",
       imageSlots: [
-        { type: "desktop", label: "Desktop UI 1" },
-        { type: "desktop", label: "Desktop UI 2" },
-        { type: "desktop", label: "Desktop UI 3" },
-        { type: "desktop", label: "Desktop UI 4" }
+        { type: "desktop", label: "Dashboard Overview" },
+        { type: "desktop", label: "Candidate Search" },
+        { type: "desktop", label: "Folder Management" },
+        { type: "desktop", label: "Talent Pool" },
+        { type: "desktop", label: "Candidate Profile" },
+        { type: "desktop", label: "Analytics View (Coming Soon)" }
+      ],
+      images: [
+        "/assets/projects/ellure-1.png",
+        "/assets/projects/ellure-2.png",
+        "/assets/projects/ellure-3.png",
+        "/assets/projects/ellure-4.png",
+        "/assets/projects/ellure-5.png",
+        "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
       ]
     },
     {
-      id: 3,
-      title: "AI Resume Creator",
-      subtitle: "ATS-Optimized Resume Generation",
-      category: "AI System",
-      problem: "Job seekers struggling to create ATS-friendly resumes tailored to specific job descriptions, resulting in missed opportunities due to resume screening filters.",
+      id: 1,
+      title: "NSH Platform",
+      subtitle: "Web + Mobile App",
+      category: "Full-Stack Application",
+      problem: "Need for a comprehensive digital platform accessible across web and mobile devices with real-time data synchronization and scalable architecture for growing user base.",
       keyFeatures: [
-        "AI-powered resume generation using LLM technology",
-        "Job description analysis and keyword extraction",
-        "ATS optimization with industry-standard formatting",
-        "Role-specific content generation and suggestions",
-        "Multiple template options with customization",
-        "Real-time preview and editing capabilities",
-        "Export to PDF, DOCX, and plain text formats",
-        "Section-wise regeneration and refinement"
+        "Responsive web interface optimized for all devices",
+        "Native mobile application for iOS and Android",
+        "Real-time data synchronization across platforms",
+        "User authentication and role-based access control",
+        "Scalable backend architecture",
+        "Performance-optimized for high traffic",
+        "Cloud deployment with auto-scaling"
       ],
-      technologies: ["Python", "OpenAI API", "React", "FastAPI", "NLP", "PDF Generation", "PostgreSQL"],
-      impact: "Helped hundreds of candidates create professional, ATS-optimized resumes. Resume creation time reduced from hours to minutes with higher quality output.",
-      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800"
+      technologies: ["React", "React Native", "Node.js", "Supabase", "PostgreSQL", "REST API", "JWT Auth", "AWS"],
+      impact: "Successfully deployed to production serving real users with 99.9% uptime. Architecture designed to scale from hundreds to thousands of concurrent users.",
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800",
+      imageSlots: [
+        { type: "mobile", label: "Profile Dashboard" },
+        { type: "mobile", label: "Home Screen" },
+        { type: "mobile", label: "Marketplace" },
+        { type: "mobile", label: "Verification Camera" },
+        { type: "mobile", label: "Special Offers" },
+        { type: "desktop", label: "Web Dashboard" },
+        { type: "desktop", label: "Coin Marketplace Web" }
+      ],
+      images: [
+        "/assets/projects/nsh-platform-1.jpg",
+        "/assets/projects/nsh-platform-2.jpg",
+        "/assets/projects/nsh-platform-3.jpg",
+        "/assets/projects/nsh-platform-4.jpg",
+        "/assets/projects/nsh-platform-5.jpg",
+        "/assets/projects/nsh-platform-web-1.png",
+        "/assets/projects/nsh-platform-web-2.png"
+      ]
     },
     {
       id: 4,
@@ -146,10 +146,18 @@ export const portfolioData = {
       impact: "Created strong online presence resulting in increased inbound inquiries. Professional design establishing credibility with enterprise clients.",
       image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800",
       imageSlots: [
-        { type: "desktop", label: "Desktop UI 1" },
-        { type: "desktop", label: "Desktop UI 2" },
-        { type: "desktop", label: "Desktop UI 3" },
-        { type: "desktop", label: "Desktop UI 4" }
+        { type: "desktop", label: "Home Page" },
+        { type: "desktop", label: "Services Page" },
+        { type: "desktop", label: "Industries Page" },
+        { type: "desktop", label: "About Us" },
+        { type: "desktop", label: "Contact Page" }
+      ],
+      images: [
+        "/assets/projects/ellure-consultancy-1.png",
+        "/assets/projects/ellure-consultancy-2.png",
+        "/assets/projects/ellure-consultancy-3.png",
+        "/assets/projects/ellure-consultancy-4.png",
+        "/assets/projects/ellure-consultancy-5.png"
       ]
     },
     {
@@ -171,75 +179,14 @@ export const portfolioData = {
       impact: "Digitized medical store operations improving customer service and operational efficiency. Enabled online ordering and better customer engagement.",
       image: "https://images.unsplash.com/photo-1576091160550-2173dba999ef?w=800",
       imageSlots: [
-        { type: "mobile", label: "Mobile UI 1" },
-        { type: "mobile", label: "Mobile UI 2" }
-      ]
-    },
-    {
-      id: 6,
-      title: "Vishvakarma Furnitures",
-      subtitle: "E-commerce Website",
-      category: "Business Website",
-      problem: "Furniture business needed online platform for customers to explore catalog, customize orders, and connect with the business.",
-      keyFeatures: [
-        "Product gallery with high-quality images",
-        "Category-based navigation",
-        "Customization request forms",
-        "Quote generation system",
-        "Contact and inquiry management",
-        "Responsive design for all devices",
-        "Admin panel for catalog management"
+        { type: "mobile", label: "Home Screen" },
+        { type: "mobile", label: "Category View" },
+        { type: "mobile", label: "Product Listing" }
       ],
-      technologies: ["React", "Node.js", "Supabase", "PostgreSQL", "Cloudinary", "Email Integration"],
-      impact: "Expanded business reach beyond local area. Enabled customers to browse catalog 24/7 and place custom orders online.",
-      image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800",
-      imageSlots: [
-        { type: "mobile", label: "Mobile UI 1" },
-        { type: "mobile", label: "Mobile UI 2" }
-      ]
-    },
-    {
-      id: 7,
-      title: "Hanuman Gym",
-      subtitle: "Fitness Center Website",
-      category: "Business Website",
-      problem: "Local gym needed professional website to showcase facilities, trainers, and services to attract new members.",
-      keyFeatures: [
-        "Trainer profiles with specializations",
-        "Facility showcase with image gallery",
-        "Service packages and pricing display",
-        "Membership inquiry forms",
-        "Class schedules and timings",
-        "Responsive mobile-first design",
-        "Future-ready architecture for booking system"
-      ],
-      technologies: ["React", "Tailwind CSS", "Node.js", "Supabase", "PostgreSQL"],
-      impact: "Created professional online presence for gym. Increased membership inquiries and provided easy access to gym information.",
-      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"
-    },
-    {
-      id: 8,
-      title: "Email Automation System",
-      subtitle: "Central Database Integration",
-      category: "Automation Solution",
-      problem: "Manual email processing causing delays and errors. Need for automated system to extract data from emails and centralize in database.",
-      keyFeatures: [
-        "Secure email reading with OAuth authentication",
-        "Rule-based email filtering and categorization",
-        "Automatic attachment download and processing",
-        "Data extraction and structured storage",
-        "Central database with search capabilities",
-        "Windows executable for easy deployment",
-        "REST API for external system integration",
-        "Logging and error handling",
-        "Scheduled automation with configurable intervals"
-      ],
-      technologies: ["Python", "IMAP Protocol", "PostgreSQL", "FastAPI", "Regex", "PyInstaller"],
-      impact: "Production-ready system eliminating manual email processing. Saved 15+ hours per week of manual work with 100% accuracy in data extraction.",
-      image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=800",
-      imageSlots: [
-        { type: "desktop", label: "Desktop UI 1" },
-        { type: "desktop", label: "Desktop UI 2" }
+      images: [
+        "/assets/projects/sri-medical-1.jpg",
+        "/assets/projects/sri-medical-2.jpg",
+        "/assets/projects/sri-medical-3.jpg"
       ]
     },
     {
@@ -265,9 +212,93 @@ export const portfolioData = {
       impact: "Highly accurate chatbot reducing customer support load by 60%. Seamless integration across platforms with consistent knowledge base.",
       image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800",
       imageSlots: [
-        { type: "desktop", label: "Desktop UI 1" },
-        { type: "desktop", label: "Desktop UI 2" }
+        { type: "desktop", label: "Chat Support" },
+        { type: "desktop", label: "Admin Dashboard" },
+        { type: "desktop", label: "Settings" }
+      ],
+      images: [
+        "/assets/projects/faq-chatbot-1.png",
+        "/assets/projects/faq-chatbot-2.png",
+        "/assets/projects/faq-chatbot-3.png"
       ]
+    },
+    {
+      id: 6,
+      title: "The Sutar Studio",
+      subtitle: "Handcrafted Furniture App",
+      category: "Mobile Application",
+      problem: "Furniture business needed online platform for customers to explore catalog, customize orders, and connect with the business.",
+      keyFeatures: [
+        "Product gallery with high-quality images",
+        "Category-based navigation",
+        "Customization request forms",
+        "Quote generation system",
+        "Contact and inquiry management",
+        "Responsive design for all devices",
+        "Admin panel for catalog management"
+      ],
+      technologies: ["React", "Node.js", "Supabase", "PostgreSQL", "Cloudinary", "Email Integration"],
+      impact: "Expanded business reach beyond local area. Enabled customers to browse catalog 24/7 and place custom orders online.",
+      image: "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800",
+      imageSlots: [
+        { type: "mobile", label: "Furniture Gallery" },
+        { type: "mobile", label: "Product Details" }
+      ],
+      images: [
+        "/assets/projects/sutar-studio-1.jpg",
+        "/assets/projects/sutar-studio-2.jpg"
+      ]
+    },
+    {
+      id: 8,
+      title: "Email Automation System",
+      subtitle: "Central Database Integration",
+      category: "Automation Solution",
+      problem: "Manual email processing causing delays and errors. Need for automated system to extract data from emails and centralize in database.",
+      keyFeatures: [
+        "Secure email reading with OAuth authentication",
+        "Rule-based email filtering and categorization",
+        "Automatic attachment download and processing",
+        "Data extraction and structured storage",
+        "Central database with search capabilities",
+        "Windows executable for easy deployment",
+        "REST API for external system integration",
+        "Logging and error handling",
+        "Scheduled automation with configurable intervals"
+      ],
+      technologies: ["Python", "IMAP Protocol", "PostgreSQL", "FastAPI", "Regex", "PyInstaller"],
+      impact: "Production-ready system eliminating manual email processing. Saved 15+ hours per week of manual work with 100% accuracy in data extraction.",
+      image: "https://images.unsplash.com/photo-1557200134-90327ee9fafa?w=800",
+      imageSlots: [
+        { type: "desktop", label: "Main Controller Interface" },
+        { type: "desktop", label: "Email Configuration" },
+        { type: "desktop", label: "Path Settings" }
+      ],
+      images: [
+        "/assets/projects/email-automation-1.png",
+        "/assets/projects/email-automation-2.png",
+        "/assets/projects/email-automation-3.png"
+      ]
+    },
+    {
+      id: 3,
+      title: "AI Resume Creator",
+      subtitle: "ATS-Optimized Resume Generation",
+      category: "AI System",
+      problem: "Job seekers struggling to create ATS-friendly resumes tailored to specific job descriptions, resulting in missed opportunities due to resume screening filters.",
+      keyFeatures: [
+        "AI-powered resume generation using LLM technology",
+        "Job description analysis and keyword extraction",
+        "ATS optimization with industry-standard formatting",
+        "Role-specific content generation and suggestions",
+        "Multiple template options with customization",
+        "Real-time preview and editing capabilities",
+        "Export to PDF, DOCX, and plain text formats",
+        "Section-wise regeneration and refinement"
+      ],
+      technologies: ["Python", "OpenAI API", "React", "FastAPI", "NLP", "PDF Generation", "PostgreSQL"],
+      impact: "Helped hundreds of candidates create professional, ATS-optimized resumes. Resume creation time reduced from hours to minutes with higher quality output.",
+      image: "https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800"
     },
     {
       id: 10,
@@ -289,6 +320,25 @@ export const portfolioData = {
       technologies: ["Python", "LLM APIs", "n8n", "React", "Chart.js", "FastAPI", "PostgreSQL"],
       impact: "Intelligent data analysis platform reducing analysis time by 70%. Automated insights generation enabling faster decision-making.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800"
+    },
+    {
+      id: 7,
+      title: "Hanuman Gym",
+      subtitle: "Fitness Center Website",
+      category: "Business Website",
+      problem: "Local gym needed professional website to showcase facilities, trainers, and services to attract new members.",
+      keyFeatures: [
+        "Trainer profiles with specializations",
+        "Facility showcase with image gallery",
+        "Service packages and pricing display",
+        "Membership inquiry forms",
+        "Class schedules and timings",
+        "Responsive mobile-first design",
+        "Future-ready architecture for booking system"
+      ],
+      technologies: ["React", "Tailwind CSS", "Node.js", "Supabase", "PostgreSQL"],
+      impact: "Created professional online presence for gym. Increased membership inquiries and provided easy access to gym information.",
+      image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800"
     }
   ],
   additionalCapabilities: [
