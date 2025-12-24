@@ -68,9 +68,17 @@ export const portfolioData = {
         "Performance-optimized for high traffic",
         "Cloud deployment with auto-scaling"
       ],
-      technologies: ["React", "React Native", "Node.js", "MongoDB", "REST API", "JWT Auth", "AWS"],
+      technologies: ["React", "React Native", "Node.js", "Supabase", "PostgreSQL", "REST API", "JWT Auth", "AWS"],
       impact: "Successfully deployed to production serving real users with 99.9% uptime. Architecture designed to scale from hundreds to thousands of concurrent users.",
-      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800"
+      image: "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=800",
+      imageSlots: [
+        { type: "mobile", label: "Mobile UI 1" },
+        { type: "mobile", label: "Mobile UI 2" },
+        { type: "mobile", label: "Mobile UI 3" },
+        { type: "desktop", label: "Desktop UI 1" },
+        { type: "desktop", label: "Desktop UI 2" },
+        { type: "desktop", label: "Desktop UI 3" }
+      ]
     },
     {
       id: 2,
